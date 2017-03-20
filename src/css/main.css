@@ -1,0 +1,69 @@
+html, body, .todo {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f9f7f1;
+  font: normal 13px Georgia, serif;
+}
+
+#app {
+  width: 92%;
+  max-width: 960px;
+  margin: 100px auto;
+}
+
+.todo {
+    list-style-type: none;
+}
+
+.todo__item {
+  padding-bottom: 10px;
+  color: #555;
+  border-bottom: 1px dashed #ccc;
+  line-height: 36px;
+  font-size: 25px;
+}
+.todo__item--done {
+  color: #ccc;
+}
+.todo__item__checkbox, .todo__item__title {
+  vertical-align: middle;
+}
+.todo__item__checkbox {
+  margin-right: 10px;
+}
+
+.todo__input, .todo__item, .todo__filter {
+  margin: 10px;
+}
+
+.todo__item--done .todo__item__title {
+  text-decoration: line-through;
+}
+
+#addTodo {
+  margin-left: 10px;
+}
+
+.todo__filters {
+  margin: 40px 0;
+  font: normal 16px Helvetica, sans-serif;
+  color: #888;
+  line-height: 30px;
+}
+
+.todo__input {
+  margin: 40px 10px;
+}
+.todo__input__textfield {
+  width: 280px;
+  outline: 2px solid #ffdd58;
+  border: 0 none;
+  padding: 8px;
+}
+
+.todo__filter__radio, .todo__filter__title {
+  vertical-align: middle;
+}
