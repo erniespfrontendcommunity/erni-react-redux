@@ -4,6 +4,7 @@ export function render(el, state) {
     renderInput(),
     renderTodos(todoItems)
   );
+  document.getElementById('todoInput').focus();
 }
 
 function renderApp(input, todoList) {
