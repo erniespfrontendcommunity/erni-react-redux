@@ -11,7 +11,7 @@ body {
 #app {
   width: 92%;
   max-width: 960px;
-  margin: 100px auto;
+  margin: 30px auto 0;
 }
 
 .todo {
@@ -46,16 +46,23 @@ body {
 #addTodo {
   margin-left: 10px;
 }
+.todo__header {
+  overflow: hidden;
+  padding: 10px 0 40px;
+}
 
 .todo__filters {
-  margin: 40px 0;
+  margin: 10px 0 0 10px;
   font: normal 16px Helvetica, sans-serif;
   color: #888;
   line-height: 30px;
+  border-left: 2px solid #ffdd58;
+  padding-left: 10px;
+  float: right;
 }
 
 .todo__input {
-  margin: 40px 10px;
+  float: left;
 }
 .todo__input__textfield {
   width: 280px;
@@ -66,4 +73,7 @@ body {
 
 .todo__filter__radio, .todo__filter__title {
   vertical-align: middle;
+}
+.todo__filter__radio {
+  margin: -1px 5px 0 0;
 }

@@ -1,9 +1,11 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+// TODO: Solve this
+// const entryPoint = process.argv.APP_VERSION === 'final' ? './src/js_final/main': './src/js/main';
+
 module.exports = {
-  entry: './src/js/main',
+  entry: './src/js_final/main',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build')
@@ -15,9 +17,7 @@ module.exports = {
         include: [path.resolve(__dirname, 'src', 'js')],
         loader: 'babel-loader',
         options: {
-          presets: [
-            'es2015'
-          ]
+          presets: ['es2015', 'react']
         }
       },
       {
@@ -31,7 +31,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({ title: 'Todo List' }),
     new ExtractTextPlugin('styles.css')
   ]
 };
