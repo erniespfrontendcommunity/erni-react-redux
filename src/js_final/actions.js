@@ -1,6 +1,3 @@
-/**
- * Created by pgotthardt on 14/01/16.
- */
 export function toggleTodoState(id) {
     return {
         type: 'TODO_TOGGLE_DONE',
