@@ -7,21 +7,30 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: [
+    'react-hot-loader/patch',
+
     // activate HMR for React
-    './js/main'
+    './js_final/main'
   ],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
-    publicPath: '/' // necessary for HMR to know where to load the hot update chunks
+
+    publicPath: '/'
+    // necessary for HMR to know where to load the hot update chunks
   },
 
   devtool: 'source-map',
 
   devServer: {
-    hot: true, // enable HMR on the server
-    contentBase: path.resolve(__dirname, 'build'), // match the output path
-    publicPath: '/' // match the output `publicPath`
+    hot: true,
+    // enable HMR on the server
+
+    contentBase: path.resolve(__dirname, 'build'),
+    // match the output path
+
+    publicPath: '/'
+    // match the output `publicPath`
   },
 
   module: {
@@ -29,7 +38,18 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         include: [path.resolve(__dirname, 'src', 'js')],
-        loader: 'babel-loader'
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ["es2015", { "modules": false }],
+              "react"
+            ],
+            plugins: [
+              "react-hot-loader/babel"
+            ]
+          }
+        }
       },
       {
         test: /\.css$/,

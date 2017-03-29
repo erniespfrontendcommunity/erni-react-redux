@@ -10,7 +10,9 @@ export function render(el, state) {
 function renderApp(input, todoList) {
   return `
     <div id="app">
-      ${input}
+      <div class="todo__header">
+        ${input}
+      </div>
       ${todoList}
     </div>
   `;
